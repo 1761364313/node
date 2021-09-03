@@ -14,5 +14,7 @@
   },
   "devDependencies": {
     "nodemon": "^2.0.12"
-  }
+  },
+  "repository": "https://github.com/1761364313/node.git",
+  "author": "汪元亮 <wangyuanliang@shein.com>"
 }
