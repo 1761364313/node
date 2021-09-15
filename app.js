@@ -2,6 +2,7 @@ import Koa from 'koa'
 import bodyParser from 'koa-bodyparser'
 import router from './src/routes/index.js'
 import { cors } from './src/server/httpConfig.js'
+import './connect.js'
 
 const app = new Koa()
 // 设置跨域

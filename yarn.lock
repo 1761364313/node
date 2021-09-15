@@ -164,7 +164,7 @@ bson@^1.1.4:
   resolved "https://registry.nlark.com/bson/download/bson-1.1.6.tgz?cache=0&sync_timestamp=1629819810393&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fbson%2Fdownload%2Fbson-1.1.6.tgz#fb819be9a60cd677e0853aee4ca712a785d6618a"
   integrity sha1-+4Gb6aYM1nfghTruTKcSp4XWYYo=
 
-bson@^4.5.1:
+bson@^4.2.2, bson@^4.5.1:
   version "4.5.1"
   resolved "https://registry.nlark.com/bson/download/bson-4.5.1.tgz?cache=0&sync_timestamp=1629819810393&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fbson%2Fdownload%2Fbson-4.5.1.tgz#02e9d649ce017ab14ed258737756c11809963d6c"
   integrity sha1-AunWSc4BerFO0lhzd1bBGAmWPWw=
@@ -337,6 +337,13 @@ crypto-random-string@^2.0.0:
   resolved "https://registry.npm.taobao.org/crypto-random-string/download/crypto-random-string-2.0.0.tgz#ef2a7a966ec11083388369baa02ebead229b30d5"
   integrity sha1-7yp6lm7BEIM4g2m6oC6+rSKbMNU=
 
+debug@4.x, debug@^4.1.1:
+  version "4.3.2"
+  resolved "https://registry.nlark.com/debug/download/debug-4.3.2.tgz?cache=0&sync_timestamp=1625374675284&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fdebug%2Fdownload%2Fdebug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
+  integrity sha1-8KScGKyHeeMdSgxgKd+3aHPHQos=
+  dependencies:
+    ms "2.1.2"
+
 debug@^2.2.0:
   version "2.6.9"
   resolved "https://registry.nlark.com/debug/download/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -350,13 +357,6 @@ debug@^3.2.6:
   integrity sha1-clgLfpFF+zm2Z2+cXl+xALk0F5o=
   dependencies:
     ms "^2.1.1"
-
-debug@^4.1.1:
-  version "4.3.2"
-  resolved "https://registry.nlark.com/debug/download/debug-4.3.2.tgz?cache=0&sync_timestamp=1625374675284&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fdebug%2Fdownload%2Fdebug-4.3.2.tgz#f0a49c18ac8779e31d4a0c6029dfb76873c7428b"
-  integrity sha1-8KScGKyHeeMdSgxgKd+3aHPHQos=
-  dependencies:
-    ms "2.1.2"
 
 debug@~3.1.0:
   version "3.1.0"
@@ -754,6 +754,11 @@ json-buffer@3.0.0:
   resolved "https://registry.npm.taobao.org/json-buffer/download/json-buffer-3.0.0.tgz#5b1f397afc75d677bde8bcfc0e47e1f9a3d9a898"
   integrity sha1-Wx85evx11ne96Lz8Dkfh+aPZqJg=
 
+kareem@2.3.2:
+  version "2.3.2"
+  resolved "https://registry.npm.taobao.org/kareem/download/kareem-2.3.2.tgz#78c4508894985b8d38a0dc15e1a8e11078f2ca93"
+  integrity sha1-eMRQiJSYW404oNwV4ajhEHjyypM=
+
 keygrip@~1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/keygrip/download/keygrip-1.1.0.tgz#871b1681d5e159c62a445b0c74b615e0917e7226"
@@ -906,6 +911,17 @@ mongodb-connection-string-url@^2.0.0:
     "@types/whatwg-url" "^8.2.1"
     whatwg-url "^9.1.0"
 
+mongodb@4.1.1, mongodb@^4.1.1:
+  version "4.1.1"
+  resolved "https://registry.nlark.com/mongodb/download/mongodb-4.1.1.tgz?cache=0&sync_timestamp=1630444408903&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmongodb%2Fdownload%2Fmongodb-4.1.1.tgz#d328e832675e7351f58b642f833126dc89ac2e66"
+  integrity sha1-0yjoMmdec1H1i2QvgzEm3ImsLmY=
+  dependencies:
+    bson "^4.5.1"
+    denque "^1.5.0"
+    mongodb-connection-string-url "^2.0.0"
+  optionalDependencies:
+    saslprep "^1.0.0"
+
 mongodb@^3.6.6:
   version "3.7.0"
   resolved "https://registry.nlark.com/mongodb/download/mongodb-3.7.0.tgz?cache=0&sync_timestamp=1630444408903&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmongodb%2Fdownload%2Fmongodb-3.7.0.tgz#a2e1d086b72e06f9af685d9ac863aeb3e80a41b8"
@@ -919,16 +935,34 @@ mongodb@^3.6.6:
   optionalDependencies:
     saslprep "^1.0.0"
 
-mongodb@^4.1.1:
-  version "4.1.1"
-  resolved "https://registry.nlark.com/mongodb/download/mongodb-4.1.1.tgz?cache=0&sync_timestamp=1630444408903&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmongodb%2Fdownload%2Fmongodb-4.1.1.tgz#d328e832675e7351f58b642f833126dc89ac2e66"
-  integrity sha1-0yjoMmdec1H1i2QvgzEm3ImsLmY=
+mongoose@^6.0.4:
+  version "6.0.4"
+  resolved "https://registry.nlark.com/mongoose/download/mongoose-6.0.4.tgz#e735eecd964b72e0d112c1e2df28449fb274b95f"
+  integrity sha1-5zXuzZZLcuDREsHi3yhEn7J0uV8=
   dependencies:
-    bson "^4.5.1"
-    denque "^1.5.0"
-    mongodb-connection-string-url "^2.0.0"
-  optionalDependencies:
-    saslprep "^1.0.0"
+    bson "^4.2.2"
+    kareem "2.3.2"
+    mongodb "4.1.1"
+    mpath "0.8.4"
+    mquery "4.0.0"
+    ms "2.1.2"
+    regexp-clone "1.0.0"
+    sift "13.5.2"
+    sliced "1.0.1"
+
+mpath@0.8.4:
+  version "0.8.4"
+  resolved "https://registry.nlark.com/mpath/download/mpath-0.8.4.tgz?cache=0&sync_timestamp=1630510504207&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmpath%2Fdownload%2Fmpath-0.8.4.tgz#6b566d9581621d9e931dd3b142ed3618e7599313"
+  integrity sha1-a1ZtlYFiHZ6THdOxQu02GOdZkxM=
+
+mquery@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.nlark.com/mquery/download/mquery-4.0.0.tgz?cache=0&sync_timestamp=1629842765284&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fmquery%2Fdownload%2Fmquery-4.0.0.tgz#6c62160ad25289e99e0840907757cdfd62bde775"
+  integrity sha1-bGIWCtJSiemeCECQd1fN/WK953U=
+  dependencies:
+    debug "4.x"
+    regexp-clone "^1.0.0"
+    sliced "1.0.1"
 
 ms@2.0.0:
   version "2.0.0"
@@ -1163,6 +1197,11 @@ redis@^3.1.2:
     redis-errors "^1.2.0"
     redis-parser "^3.0.0"
 
+regexp-clone@1.0.0, regexp-clone@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.nlark.com/regexp-clone/download/regexp-clone-1.0.0.tgz#222db967623277056260b992626354a04ce9bf63"
+  integrity sha1-Ii25Z2IydwViYLmSYmNUoEzpv2M=
+
 registry-auth-token@^4.0.0:
   version "4.2.1"
   resolved "https://registry.nlark.com/registry-auth-token/download/registry-auth-token-4.2.1.tgz?cache=0&sync_timestamp=1622604543458&other_urls=https%3A%2F%2Fregistry.nlark.com%2Fregistry-auth-token%2Fdownload%2Fregistry-auth-token-4.2.1.tgz#6d7b4006441918972ccd5fedcd41dc322c79b250"
@@ -1247,10 +1286,20 @@ side-channel@^1.0.4:
     get-intrinsic "^1.0.2"
     object-inspect "^1.9.0"
 
+sift@13.5.2:
+  version "13.5.2"
+  resolved "https://registry.nlark.com/sift/download/sift-13.5.2.tgz#24a715e13c617b086166cd04917d204a591c9da6"
+  integrity sha1-JKcV4TxhewhhZs0EkX0gSlkcnaY=
+
 signal-exit@^3.0.2:
   version "3.0.3"
   resolved "https://registry.npm.taobao.org/signal-exit/download/signal-exit-3.0.3.tgz#a1410c2edd8f077b08b4e253c8eacfcaf057461c"
   integrity sha1-oUEMLt2PB3sItOJTyOrPyvBXRhw=
+
+sliced@1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npm.taobao.org/sliced/download/sliced-1.0.1.tgz#0b3a662b5d04c3177b1926bea82b03f837a2ef41"
+  integrity sha1-CzpmK10Ewxd7GSa+qCsD+Dei70E=
 
 sparse-bitfield@^3.0.3:
   version "3.0.3"
