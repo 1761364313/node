@@ -1,10 +1,8 @@
 import mongodb from 'mongodb'
 
-import { isEmpty } from '../public/utils.js'
-
 const MongoClient = mongodb.MongoClient
 
-const HOST = 'mongodb://localhost:27017/'
+const HOST = 'mongodb://127.0.0.1:27017/'
 const DATABASE = 'order'
 
 
@@ -44,7 +42,6 @@ const getNextSequenceValue = (sequenceName, dbo, type='add') => {
 // 暴露ObjectId
 export const ObjectID = mongodb.ObjectId
 
-console.log('ObjectID', ObjectID)
 // 查询总数
 export const count = (collectionname,json = {}) => new Promise((resolve, reject) => {
   connectDb().then(dbs => {

@@ -14,10 +14,11 @@ router.all('/list', async(ctx,next) => {
   }
   console.log('page', page)
   const db = await find('list', {}, page)
+  console.log('db', db)
   if (db.data) {
     const res = {
       code: 0,
-      list: db.data,
+      data: db.data,
       count: db.count,
       msg: 'success' 
     }
