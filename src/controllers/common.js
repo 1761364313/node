@@ -3,10 +3,11 @@ import { isEmpty, resultErrorJson, resultSuccessJson } from '../public/utils.js'
 import { dateFormat } from '../public/utils.js'
 
 // 添加
-export const create = (json, modelName, counstName = 'list') => new Promise(async(resolve, reject) => {
+export const create = (json, modelName, counstName = 'list') => new Promise(async (resolve, reject) => {
   try {
-    const params = {...json}
+    const params = { ...json }
     await getNextSequenceValue(counstName).then(id => {
+      console.log('id', id);
       params._id = id || 0
       params.creatTime = dateFormat()
     })
@@ -22,12 +23,13 @@ export const create = (json, modelName, counstName = 'list') => new Promise(asyn
 })
 
 // 编辑
-export const updateOne = (json, modelName) => new Promise(async(resolve, reject) => {
+export const updateOne = (json, modelName) => new Promise(async (resolve, reject) => {
   try {
-    const params = {...json}
-    const setId =  {$set: {_id: params._id}}
-    const db = await modelName.updateOne(json, setId)
-    console.log('db',db)
+    const params = { ...json }
+    const setId = { $set: { _id: params._id } }
+    delete params._id
+    const db = await modelName.updateOne(setId, params)
+    console.log('db', db)
     if (db) {
       resolve(resultSuccessJson())
     } else {
@@ -39,8 +41,8 @@ export const updateOne = (json, modelName) => new Promise(async(resolve, reject)
 })
 
 // 删除
-export const deleteOne = (json, modelName) => new Promise(async(resolve, reject) => {
-  try{
+export const deleteOne = (json, modelName) => new Promise(async (resolve, reject) => {
+  try {
     const db = await modelName.deleteOne(json)
     if (db) {
       resolve(resultSuccessJson())
@@ -57,21 +59,21 @@ export const find = (json, modelName) => new Promise(async (resolve, reject) => 
   try {
     // 查询分页
     let page = {}
-    const {pageIndex, pageSize} = json
+    const { pageIndex, pageSize } = json
     if (!isEmpty(pageIndex) && pageSize) {
       page.skip = pageSize * (pageIndex - 1)
       page.limit = pageSize - 0
     }
     // 删除 空字段
-    const params = { ... json }
+    const params = { ...json }
     Object.keys(params).forEach(i => {
       if (!params[i]) delete params[i]
     })
     // 查询 时间段 
-    const {startTime, endTime} = params
+    const { startTime, endTime } = params
     if (startTime && endTime) {
       params.creatTime = {
-        $gte: startTime, 
+        $gte: startTime,
         $lte: endTime
       }
     }
@@ -79,7 +81,7 @@ export const find = (json, modelName) => new Promise(async (resolve, reject) => 
     delete params.endTime
     delete params.pageIndex
     delete params.pageSize
-    const res = await modelName.find(params, null, {...page}).sort({creatTime: -1})
+    const res = await modelName.find(params, null, { ...page }).sort({ creatTime: -1 })
     const count = await modelName.count(params)
     resolve({
       code: 0,

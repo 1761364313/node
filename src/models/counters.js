@@ -7,8 +7,8 @@ const Schema = mongoose.Schema
 const counters = new Schema({
   _id: String,
   sequence_value: Number,
-  creatTime: {type: String, default: dateFormat()}
-}, {collection: 'counters', versionKey: false})
+  creatTime: { type: String, default: dateFormat() }
+}, { collection: 'counters', versionKey: false })
 
 // counters 表
 export default mongoose.model('counters', counters)

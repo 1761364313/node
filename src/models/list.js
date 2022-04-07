@@ -11,8 +11,8 @@ const list = new Schema({
   priceAll: Number,
   tel: Number,
   person: String,
-  creatTime: {type: String, default: dateFormat()}
-}, {collection: 'list', versionKey: false})
+  creatTime: { type: String, default: dateFormat() }
+}, { collection: 'list', versionKey: false })
 
 // 连接list 表
 export default mongoose.model('list', list)
