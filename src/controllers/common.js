@@ -29,7 +29,6 @@ export const updateOne = (json, modelName) => new Promise(async (resolve, reject
     const setId = { $set: { _id: params._id } }
     delete params._id
     const db = await modelName.updateOne(setId, params)
-    console.log('db', db)
     if (db) {
       resolve(resultSuccessJson())
     } else {
